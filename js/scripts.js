@@ -113,16 +113,9 @@ function generarPelotas() {
     del tablero.
     Comienza a andar el cronometro**/
     cronometrar();
-    if (modoUna) {
-        modo.classList.add("ocultar");
-        for (let i = 0; i < numeroPelotas.value; i++) {
-            crearPelota();
-        }
-    } else {
-        modo.classList.add("ocultar");
-        for (let i = 0; i < numeroPelotas.value; i++) {
-            crearPelota();
-        }
+    modo.classList.add("ocultar");
+    for (let i = 0; i < numeroPelotas.value; i++) {
+        crearPelota();
     }
 }
 
@@ -183,13 +176,11 @@ function eliminarPelota() {
         if (!this.classList.contains(color)) {
             fallos = document.getElementById("fallos");
             fallos.innerText++;
-            cuentaPelotas++;
         } else {
             aciertoPantalla.innerText++;
             aciertos++;
-            cuentaPelotas++;
-            console.log(aciertos);
         }
+        cuentaPelotas++;
         if (aciertos >= numeroPelotas.value / 2) {
             finPartida();
         }
